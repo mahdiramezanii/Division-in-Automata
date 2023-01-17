@@ -3,15 +3,13 @@ def division_operation(L1,L2):
 
     import random
 
-    # =========================================      Variables    =====================================================
+    # =========================================     Variables    =====================================================
 
 
     number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "n", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
               "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "m"]
 
     number_2 = "12345678910"
-
-    string = "qwertyuioplkjhgfdsazxcvbnm"
 
     data = "ab"
 
@@ -61,7 +59,7 @@ def division_operation(L1,L2):
 
             break
 
-    for i in string_l1:
+    for i in string_l1:  #اینجا مشخخص کیکنم که هر کاراکتر چند بار باید تکرار شود   {a:4}
 
         for j in power_l1:
             l1[i] = j
@@ -114,12 +112,27 @@ def division_operation(L1,L2):
 
         else:
 
-            for i in range(len(condition_l2)):
+            counter = 0
+            i = 0
+
+            while counter < len(condition_l2):
 
                 if (condition_l2[i] in "qwertyuioplkjhgfdsazxcvbnm"):
 
-                    if ((i + 1) < len(condition_l2)):
+                    if ((i + 2) < len(condition_l2)):
                         number_condition_l2[condition_l2[i]] = condition_l2[i + 2]
+
+                i = i + 1
+                counter += 1
+
+
+            # for i in range(len(condition_l2)):
+            #
+            #     if (condition_l2[i] in "qwertyuioplkjhgfdsazxcvbnm"):
+            #
+            #         if ((i + 2) < len(condition_l2)):
+            #             number_condition_l2[condition_l2[i]] = condition_l2[i + 2]  #j>2 -> j=2
+
 
             for k, v in number_condition_l2.items():
 
@@ -128,9 +141,9 @@ def division_operation(L1,L2):
                     if value == k:
 
                         # Generate multiple random strings for language
-                        for i in range((random.randint(int(v), 5)), random.randint(int(v), 10)):
+                        for i in range((random.randint(int(v), 4)), random.randint(int(v), 9)):
 
-                            for j in range(3):
+                            for j in range(4):
                                 # result_l2.append(key*(i+(random.randint(0,2))))
                                 result_l2.append(key * (i + j))
 
@@ -159,25 +172,56 @@ def division_operation(L1,L2):
 
         else:
 
-            for i in range(len(condition_l1)):
+            counter=0
+            i=0
+
+
+            while counter < len(condition_l1):
+
 
                 if (condition_l1[i] in "qwertyuioplkjhgfdsazxcvbnm"):
 
-                    if ((i + 1) < len(condition_l1)):
+                    if ((i + 2) < len(condition_l1)):
                         number_condition_l1[condition_l1[i]] = condition_l1[i + 2]
+
+                i=i+1
+                counter+=1
+
+
+
+            # for i in range(len(condition_l1)):
+            #
+            #     if (condition_l1[i] in "qwertyuioplkjhgfdsazxcvbnm"):
+            #
+            #         if ((i + 2) < len(condition_l1)):
+            #             number_condition_l1[condition_l1[i]] = condition_l1[i + 2]
+
+
 
             for k, v in number_condition_l1.items():
 
+
+
+
+
                 for key, value in copy_l1.items():
+
+
 
                     if value == k:
 
-                        # Generate multiple random strings for language
-                        for i in range((random.randint(int(v), 1)), random.randint(int(v), 9)):
 
-                            for j in range(3):
-                                # result_l1.append(key*(i))
+
+                        # Generate multiple random strings for language
+                        for i in range((random.randint(int(v), 4)), random.randint(int(v), 9)):
+
+                            for j in range(4):
+
+
+
                                 result_l1.append(key * (i + j))
+
+
 
                             break
 
@@ -189,13 +233,15 @@ def division_operation(L1,L2):
 
     # =====================================            Create Final Result L1           ============================
 
-    for i in range(0, len(result_l1) // 2):
+    for i in range(0, len(result_l1) // 2):  #نصف رشته را جدا منید
 
         final_result_l1.append(result_l1[i])
 
+
+
     j = 0
 
-    for i in range(len(result_l1) // 2, len(result_l1)):
+    for i in range(len(result_l1) // 2, len(result_l1)):  #نصف دوم رشته را جد مکیند
 
         while j < len(final_result_l1):
             final_result_l1[j] += (result_l1[i])
@@ -232,3 +278,13 @@ def division_operation(L1,L2):
     return re
 
 
+# l1=input("enter l1: ")
+# l2=input("enter l2: ")
+#
+# re=division_operation(l1,l2)
+#
+# L1=re[0]
+# L2=re[1]
+#
+# print(L1)
+# print(L2)

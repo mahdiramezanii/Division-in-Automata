@@ -3,16 +3,16 @@ from create_string import division_operation
 from Class_Function import String,reverse,division,Dictlist
 #================================================================
 
-# l1=input("enter l1: ")
-# l2=input("enter l2: ")
+l1=input("enter l1: ")
+l2=input("enter l2: ")
 
-# re=division_operation(l1,l2)
+re=division_operation(l1,l2)
 
-"""L1=re[0]
-L2=re[1]"""
+L1=re[0]
+L2=re[1]
 
-L1=["a","b","aa","bb","ab","ba","abbb","aaba","abaa"]
-L2=["a","aa","b","bb","bbb"]
+# L1=["a","b","aa","bb","ab","a","abb","abbbb"]
+# L2=["a","aa","b","bb","bbb"]
 
 
 
@@ -36,7 +36,7 @@ for L in L1:
 
             result_l1[item] = L
 
-
+# print(result_l1)
 
 L1.clear()
 L2.clear()
@@ -72,10 +72,10 @@ while len(L2)>index:
     index += 1
 
 
-print(f"result___l1: {result_l1}")
+# print(f"result___l1: {result_l1}")
 # print(final_result)
 
 final_result = list(dict.fromkeys(final_result)) #Remove duplicate strings
-print(final_result)
+print("final result:",final_result)
 
 
