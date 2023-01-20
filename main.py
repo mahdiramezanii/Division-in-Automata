@@ -60,7 +60,7 @@ while len(L2)>index:
     for item in L1[index]:
 
 
-        if L2[index] in reverse((item[-1:(-((len(L2[index]))+1)):-1])): #چک کردن اینکه رشته l1 پسوندی از l2 داشته باشد.
+        if L2[index] in reverse((item[-1:(-((len(L2[index]))+1)):-1])):
 
             if item == L2[index]:
 
